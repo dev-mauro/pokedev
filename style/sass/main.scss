@@ -1,0 +1,277 @@
+@use "8bit-border" as b;
+@import "types.scss";
+@import "animations.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+$background-white: #fbfbfb;
+$pixeled: "Press Start 2P";
+$pixeled2: "VT323";
+$card-background: rgb(224, 224, 224);
+$black: rgb(81, 81, 81);
+$pikayellow: rgb(255, 213, 56);
+$searcher-color: #fbfbfb;
+$grassgreen: #9ac84e;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-white;
+  font-family: $pixeled;
+}
+
+header {
+  height: auto;
+  padding-top: 300px;
+  background-color: $pikayellow;
+
+  .hero {
+    height: 300px;
+    align-items: center;
+    padding: 100px 0;
+    position: relative;
+    overflow-x: hidden;
+    background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+
+    .title {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+
+      h1 {
+        font-size: 60px;
+        line-height: 45px;
+      }
+
+      .logo {
+        width: 75px;
+        height: 75px;
+        margin-right: 10px;
+        position: relative;
+        bottom: 20px;
+      }
+    }
+
+    span {
+      color: red;
+    }
+
+    .byme {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+
+      span {
+        padding: 2px 5px;
+        background-color: darken($pikayellow, 10%);
+        @include b.px4(2px, darken($pikayellow, 20%), darken($pikayellow, 10%));
+      }
+    }
+
+    .hero-gif {
+      min-width: 250px;
+      max-width: 280px;
+      width: 20%;
+      bottom: 0;
+      right: 15px;
+      position: absolute;
+      animation-name: pikaMove;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .hero-sun {
+    position: absolute;
+    width: 100px;
+    top: 50px;
+    right: calc(20%);
+  }
+
+  .searcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
+    background-size: contain;
+    background-color: $grassgreen;
+    border-bottom: 1px solid black;
+
+    .search-input__container {
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 15px 0px 20px darken($grassgreen, 20%),
+        -15px 0px 20px darken($grassgreen, 20%);
+      margin-bottom: 30px;
+
+      .text-input {
+        border: none;
+        height: 60px;
+        width: 100%;
+        max-width: 300px;
+        font-size: 1.2em;
+        font-family: $pixeled;
+        text-transform: uppercase;
+        padding: 10px 50px 10px 15px;
+        @include b.px3(5px, $black, darken($card-background, 5%));
+        background-color: $card-background;
+        // text-align: center;
+      }
+
+      img {
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        height: 70px;
+      }
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .search-button__container {
+      width: 200px;
+      box-shadow: 15px 0px 25px darken($grassgreen, 20%),
+        -15px 0px 25px darken($grassgreen, 20%);
+      margin-bottom: 30px;
+      margin: 0 auto;
+    }
+
+    .search-button {
+      width: 200px;
+      height: 50px;
+      font-size: 1em;
+      position: relative;
+      border: none;
+      background-image: linear-gradient(
+        to right,
+        #a1dd9d,
+        #8cd99d,
+        #75d59f,
+        #59d1a2,
+        #31cda7
+      );
+      color: $black;
+      font-family: inherit;
+      display: flex;
+      @include b.px2(5px, #1c8696, #73d5a0);
+
+      span {
+        margin-left: 40px;
+        line-height: 50px;
+        text-transform: uppercase;
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        right: 0px;
+        top: 3px;
+      }
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    // .searcher-form {
+
+    // }
+  }
+}
+
+.cards-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 0;
+  min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    @include b.px2(5px, $black, $card-background);
+    aspect-ratio: 0.8;
+    position: relative;
+    width: 200px;
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.5s;
+    background-color: $card-background;
+    background-image: url("https://user-images.githubusercontent.com/68218563/197868863-1394dede-bb87-4641-8522-03a6292d4364.png");
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+
+    .card-header {
+      margin-bottom: 15px;
+      h4 {
+        margin: 10px 0;
+        color: black;
+        text-transform: uppercase;
+      }
+
+      .pokesprite {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        background-size: 110%;
+        background-position: center;
+      }
+    }
+
+    .card-body {
+      font-family: $pixeled2;
+      text-align: start;
+
+      .poke-stat {
+        font-size: 23px;
+        margin-bottom: 8px;
+        padding-left: 5px;
+      }
+
+      .types-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 0 15px;
+      }
+    }
+
+    .selected-card {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -30px;
+      left: calc(50% - 15px);
+      background-image: url("https://user-images.githubusercontent.com/68218563/197870442-002113cd-491c-4772-acf2-772b0f3f11b8.png");
+      background-size: contain;
+      display: none;
+    }
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    @include b.px2(5px, darken($pikayellow, 15%), $pikayellow);
+    margin: 15px;
+    cursor: pointer;
+
+    .selected-card {
+      display: block;
+    }
+  }
+}

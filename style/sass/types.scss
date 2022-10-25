@@ -1,0 +1,43 @@
+@use '8bit-border.scss' as b;
+
+.type {
+    display: inline-block;
+    min-width: 90px;
+    margin: 0 auto;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+$type-info: (
+    normal: #a8a878,
+    fire: rgb(242, 143, 62),
+    water: #6890f0,
+    grass: #78c850,
+    electric: rgb(194, 194, 42),
+    ice: #98d8d8,
+    fighting: #c03028,
+    poison: #a040a0,
+    ground: #e0c068,
+    flying: rgb(82, 102, 137),
+    psychic: #f85888,
+    bug: #a8b820,
+    rock: rgb(190, 173, 127),
+    ghost: #705898,
+    dark: #5b5974,
+    dragon: #7038f8,
+    steel: #b8b8d0,
+    fairy: #f0b6bc
+);
+
+@each $type, $color in $type-info {
+    .#{$type} {
+        background-color: $color;
+        @include b.px1(3px, darken($color, 5%));
+    }
+
+    .#{$type}::before {
+        content: "#{$type}";
+    }
+}

@@ -1,0 +1,26 @@
+@keyframes pikaMove {
+    from {
+        left: -500px;
+        filter: invert(0);
+        z-index: 2;
+    }
+    49% {
+        transform: rotateY(0);
+        filter: invert(0);
+        z-index: 2;
+    }
+    50% {
+        left: 110%;
+        transform: rotateY(180deg);
+        filter: invert(50%);
+        z-index: 0;
+    }
+    99% {
+        transform: rotateY(180deg);
+        filter: invert(50%);
+        z-index: 0;
+    }
+    to {
+        left: -500px;
+    }
+}

@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.type {
+  display: inline-block;
+  min-width: 90px;
+  margin: 0 auto;
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.normal {
+  background-color: #a8a878;
+  box-shadow: 3px 0 #9e9e68, -3px 0 #9e9e68, 0 -3px #9e9e68, 0 3px #9e9e68;
+  margin: 3px auto;
+}
+
+.normal::before {
+  content: "normal";
+}
+
+.fire {
+  background-color: rgb(242, 143, 62);
+  box-shadow: 3px 0 #f08126, -3px 0 #f08126, 0 -3px #f08126, 0 3px #f08126;
+  margin: 3px auto;
+}
+
+.fire::before {
+  content: "fire";
+}
+
+.water {
+  background-color: #6890f0;
+  box-shadow: 3px 0 #517fee, -3px 0 #517fee, 0 -3px #517fee, 0 3px #517fee;
+  margin: 3px auto;
+}
+
+.water::before {
+  content: "water";
+}
+
+.grass {
+  background-color: #78c850;
+  box-shadow: 3px 0 #69c23d, -3px 0 #69c23d, 0 -3px #69c23d, 0 3px #69c23d;
+  margin: 3px auto;
+}
+
+.grass::before {
+  content: "grass";
+}
+
+.electric {
+  background-color: rgb(194, 194, 42);
+  box-shadow: 3px 0 #adad25, -3px 0 #adad25, 0 -3px #adad25, 0 3px #adad25;
+  margin: 3px auto;
+}
+
+.electric::before {
+  content: "electric";
+}
+
+.ice {
+  background-color: #98d8d8;
+  box-shadow: 3px 0 #86d1d1, -3px 0 #86d1d1, 0 -3px #86d1d1, 0 3px #86d1d1;
+  margin: 3px auto;
+}
+
+.ice::before {
+  content: "ice";
+}
+
+.fighting {
+  background-color: #c03028;
+  box-shadow: 3px 0 #ab2b24, -3px 0 #ab2b24, 0 -3px #ab2b24, 0 3px #ab2b24;
+  margin: 3px auto;
+}
+
+.fighting::before {
+  content: "fighting";
+}
+
+.poison {
+  background-color: #a040a0;
+  box-shadow: 3px 0 #8e398e, -3px 0 #8e398e, 0 -3px #8e398e, 0 3px #8e398e;
+  margin: 3px auto;
+}
+
+.poison::before {
+  content: "poison";
+}
+
+.ground {
+  background-color: #e0c068;
+  box-shadow: 3px 0 #dcb753, -3px 0 #dcb753, 0 -3px #dcb753, 0 3px #dcb753;
+  margin: 3px auto;
+}
+
+.ground::before {
+  content: "ground";
+}
+
+.flying {
+  background-color: rgb(82, 102, 137);
+  box-shadow: 3px 0 #485a79, -3px 0 #485a79, 0 -3px #485a79, 0 3px #485a79;
+  margin: 3px auto;
+}
+
+.flying::before {
+  content: "flying";
+}
+
+.psychic {
+  background-color: #f85888;
+  box-shadow: 3px 0 #f74077, -3px 0 #f74077, 0 -3px #f74077, 0 3px #f74077;
+  margin: 3px auto;
+}
+
+.psychic::before {
+  content: "psychic";
+}
+
+.bug {
+  background-color: #a8b820;
+  box-shadow: 3px 0 #94a21c, -3px 0 #94a21c, 0 -3px #94a21c, 0 3px #94a21c;
+  margin: 3px auto;
+}
+
+.bug::before {
+  content: "bug";
+}
+
+.rock {
+  background-color: rgb(190, 173, 127);
+  box-shadow: 3px 0 #b5a26e, -3px 0 #b5a26e, 0 -3px #b5a26e, 0 3px #b5a26e;
+  margin: 3px auto;
+}
+
+.rock::before {
+  content: "rock";
+}
+
+.ghost {
+  background-color: #705898;
+  box-shadow: 3px 0 #644f88, -3px 0 #644f88, 0 -3px #644f88, 0 3px #644f88;
+  margin: 3px auto;
+}
+
+.ghost::before {
+  content: "ghost";
+}
+
+.dark {
+  background-color: #5b5974;
+  box-shadow: 3px 0 #504e66, -3px 0 #504e66, 0 -3px #504e66, 0 3px #504e66;
+  margin: 3px auto;
+}
+
+.dark::before {
+  content: "dark";
+}
+
+.dragon {
+  background-color: #7038f8;
+  box-shadow: 3px 0 #5e1ff7, -3px 0 #5e1ff7, 0 -3px #5e1ff7, 0 3px #5e1ff7;
+  margin: 3px auto;
+}
+
+.dragon::before {
+  content: "dragon";
+}
+
+.steel {
+  background-color: #b8b8d0;
+  box-shadow: 3px 0 #a9a9c6, -3px 0 #a9a9c6, 0 -3px #a9a9c6, 0 3px #a9a9c6;
+  margin: 3px auto;
+}
+
+.steel::before {
+  content: "steel";
+}
+
+.fairy {
+  background-color: #f0b6bc;
+  box-shadow: 3px 0 #eca1a9, -3px 0 #eca1a9, 0 -3px #eca1a9, 0 3px #eca1a9;
+  margin: 3px auto;
+}
+
+.fairy::before {
+  content: "fairy";
+}
+
+@keyframes pikaMove {
+  from {
+    left: -500px;
+    filter: invert(0);
+    z-index: 2;
+  }
+  49% {
+    transform: rotateY(0);
+    filter: invert(0);
+    z-index: 2;
+  }
+  50% {
+    left: 110%;
+    transform: rotateY(180deg);
+    filter: invert(50%);
+    z-index: 0;
+  }
+  99% {
+    transform: rotateY(180deg);
+    filter: invert(50%);
+    z-index: 0;
+  }
+  to {
+    left: -500px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fbfbfb;
+  font-family: "Press Start 2P";
+}
+
+header {
+  height: auto;
+  padding-top: 300px;
+  background-color: rgb(255, 213, 56);
+}
+header .hero {
+  height: 300px;
+  align-items: center;
+  padding: 100px 0;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+header .hero .title {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+header .hero .title h1 {
+  font-size: 60px;
+  line-height: 45px;
+}
+header .hero .title .logo {
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+  position: relative;
+  bottom: 20px;
+}
+header .hero span {
+  color: red;
+}
+header .hero .byme {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+header .hero .byme span {
+  padding: 2px 5px;
+  background-color: #ffca05;
+  box-shadow: 2px 0 #ffca05, -2px 0 #ffca05, 0 -2px #ffca05, 0 2px #ffca05, 4px 0 #ffca05, -4px 0 #ffca05, 0 -4px #ffca05, 0 4px #ffca05, 0 0 0 2px #ffca05, 6px 0 #ffca05, -6px 0 #ffca05, 0 6px #ffca05, 0 -6px #ffca05, 0 -2px 0 2px #ffca05, 0 2px 0 2px #ffca05, 2px 0 0 2px #ffca05, -2px 0 0 2px #ffca05, 8px 0 #d1a500, -8px 0 #d1a500, 0 -8px #d1a500, 0 8px #d1a500, 4px 0 0 2px #d1a500, -4px 0 0 2px #d1a500, 0 4px 0 2px #d1a500, 0 -4px 0 2px #d1a500, 0 0 0 4px #d1a500;
+  margin: 8px auto;
+}
+header .hero .hero-gif {
+  min-width: 250px;
+  max-width: 280px;
+  width: 20%;
+  bottom: 0;
+  right: 15px;
+  position: absolute;
+  animation-name: pikaMove;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+header .hero-sun {
+  position: absolute;
+  width: 100px;
+  top: 50px;
+  right: 20%;
+}
+header .searcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
+  background-size: contain;
+  background-color: #9ac84e;
+  border-bottom: 1px solid black;
+}
+header .searcher .search-input__container {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 15px 0px 20px #63862a, -15px 0px 20px #63862a;
+  margin-bottom: 30px;
+}
+header .searcher .search-input__container .text-input {
+  border: none;
+  height: 60px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.2em;
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  padding: 10px 50px 10px 15px;
+  box-shadow: 5px 0 lightgray, -5px 0 lightgray, 0 -5px lightgray, 0 5px lightgray, 10px 0 lightgray, -10px 0 lightgray, 0 -10px lightgray, 0 10px lightgray, 0 0 0 5px lightgray, 15px 0 rgb(81, 81, 81), -15px 0 rgb(81, 81, 81), 0 15px rgb(81, 81, 81), 0 -15px rgb(81, 81, 81), 0 -5px 0 5px rgb(81, 81, 81), 0 5px 0 5px rgb(81, 81, 81), 5px 0 0 5px rgb(81, 81, 81), -5px 0 0 5px rgb(81, 81, 81);
+  margin: 15px auto;
+  background-color: rgb(224, 224, 224);
+}
+header .searcher .search-input__container img {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  height: 70px;
+}
+header .searcher input:focus {
+  outline: none;
+}
+header .searcher .search-button__container {
+  width: 200px;
+  box-shadow: 15px 0px 25px #63862a, -15px 0px 25px #63862a;
+  margin-bottom: 30px;
+  margin: 0 auto;
+}
+header .searcher .search-button {
+  width: 200px;
+  height: 50px;
+  font-size: 1em;
+  position: relative;
+  border: none;
+  background-image: linear-gradient(to right, #a1dd9d, #8cd99d, #75d59f, #59d1a2, #31cda7);
+  color: rgb(81, 81, 81);
+  font-family: inherit;
+  display: flex;
+  box-shadow: 5px 0 #73d5a0, -5px 0 #73d5a0, 0 -5px #73d5a0, 0 5px #73d5a0, 10px 0 #1c8696, -10px 0 #1c8696, 0 -10px #1c8696, 0 10px #1c8696, 0 0 0 5px #1c8696;
+  margin: 10px auto;
+}
+header .searcher .search-button span {
+  margin-left: 40px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+header .searcher .search-button img {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  top: 3px;
+}
+header .searcher button:hover {
+  cursor: pointer;
+}
+
+.cards-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 0;
+  min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.cards-container .card {
+  box-shadow: 5px 0 rgb(224, 224, 224), -5px 0 rgb(224, 224, 224), 0 -5px rgb(224, 224, 224), 0 5px rgb(224, 224, 224), 10px 0 rgb(81, 81, 81), -10px 0 rgb(81, 81, 81), 0 -10px rgb(81, 81, 81), 0 10px rgb(81, 81, 81), 0 0 0 5px rgb(81, 81, 81);
+  margin: 10px auto;
+  aspect-ratio: 0.8;
+  position: relative;
+  width: 200px;
+  margin: 15px;
+  text-align: center;
+  transition: transform 0.5s;
+  background-color: rgb(224, 224, 224);
+  background-image: url("https://user-images.githubusercontent.com/68218563/197868863-1394dede-bb87-4641-8522-03a6292d4364.png");
+  background-position: center;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+.cards-container .card .card-header {
+  margin-bottom: 15px;
+}
+.cards-container .card .card-header h4 {
+  margin: 10px 0;
+  color: black;
+  text-transform: uppercase;
+}
+.cards-container .card .card-header .pokesprite {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-size: 110%;
+  background-position: center;
+}
+.cards-container .card .card-body {
+  font-family: "VT323";
+  text-align: start;
+}
+.cards-container .card .card-body .poke-stat {
+  font-size: 23px;
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+.cards-container .card .card-body .types-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 15px;
+}
+.cards-container .card .selected-card {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -30px;
+  left: calc(50% - 15px);
+  background-image: url("https://user-images.githubusercontent.com/68218563/197870442-002113cd-491c-4772-acf2-772b0f3f11b8.png");
+  background-size: contain;
+  display: none;
+}
+.cards-container .card:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 0 rgb(255, 213, 56), -5px 0 rgb(255, 213, 56), 0 -5px rgb(255, 213, 56), 0 5px rgb(255, 213, 56), 10px 0 #ebb900, -10px 0 #ebb900, 0 -10px #ebb900, 0 10px #ebb900, 0 0 0 5px #ebb900;
+  margin: 10px auto;
+  margin: 15px;
+  cursor: pointer;
+}
+.cards-container .card:hover .selected-card {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */
