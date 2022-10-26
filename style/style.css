@@ -320,7 +320,7 @@ header .searcher .search-input__container .text-input {
   border: none;
   height: 60px;
   width: 100%;
-  max-width: 290px;
+  max-width: 310px;
   font-size: 1.2em;
   font-family: "Press Start 2P";
   text-transform: uppercase;
@@ -374,14 +374,14 @@ header .searcher button:hover {
 }
 
 main {
+  width: fit-content;
+  min-width: 500px;
+  max-width: 95%;
   padding: 10px 30px;
+  margin: 0 auto;
   border: 5px solid black;
   background-color: #e93031;
   box-shadow: inset 0px 3px 10px #b52526, inset 0px -3px 10px #b52526, inset 3px 0px 10px #b52526, inset -3px 0px 10px #b52526, 0px 0px 20px #344616;
-  width: fit-content;
-  margin: 0 auto;
-  min-width: 500px;
-  max-width: 95%;
 }
 main .pokedex__container {
   box-shadow: 5px 0 rgb(81, 81, 81), -5px 0 rgb(81, 81, 81), 0 -5px rgb(81, 81, 81), 0 5px rgb(81, 81, 81), 10px 0 rgb(81, 81, 81), -10px 0 rgb(81, 81, 81), 0 -10px rgb(81, 81, 81), 0 10px rgb(81, 81, 81), 0 0 0 5px rgb(81, 81, 81), 15px 0 rgb(81, 81, 81), -15px 0 rgb(81, 81, 81), 0 15px rgb(81, 81, 81), 0 -15px rgb(81, 81, 81), 0 -5px 0 5px rgb(81, 81, 81), 0 5px 0 5px rgb(81, 81, 81), 5px 0 0 5px rgb(81, 81, 81), -5px 0 0 5px rgb(81, 81, 81), 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 10px 0 0 5px black, -10px 0 0 5px black, 0 10px 0 5px black, 0 -10px 0 5px black, 0 0 0 10px black;
@@ -391,15 +391,16 @@ main .pokedex__container {
 }
 
 .cards-container {
-  max-height: calc(100vh - 70px);
   width: 100%;
-  overflow-y: scroll;
-  padding: 50px 5px 50px 10px;
+  max-height: 90vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0px 3px 10px rgb(58, 58, 58), inset 0px -3px 10px rgb(58, 58, 58), inset 3px 0px 10px rgb(58, 58, 58), inset -3px 0px 10px rgb(58, 58, 58), 0 0 0 0;
+  padding: 50px 5px 50px 10px;
+  border: 3px solid black;
+  overflow-y: scroll;
+  box-shadow: inset 0px 1px 10px rgb(85, 85, 85), inset 0px -1px 10px rgb(85, 85, 85), inset 1px 0px 10px rgb(85, 85, 85), inset -1px 0px 10px rgb(85, 85, 85), 0 0 0 0;
 }
 .cards-container .card {
   box-shadow: 5px 0 rgb(224, 224, 224), -5px 0 rgb(224, 224, 224), 0 -5px rgb(224, 224, 224), 0 5px rgb(224, 224, 224), 10px 0 rgb(49, 49, 49), -10px 0 rgb(49, 49, 49), 0 -10px rgb(49, 49, 49), 0 10px rgb(49, 49, 49), 0 0 0 5px rgb(49, 49, 49);
@@ -483,6 +484,28 @@ main .pokedex__container {
   background: #e93031;
 }
 
+.toastify {
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3em;
+  width: fit-content;
+  max-width: calc(100vw - 40px);
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+.toastify.red {
+  background-image: linear-gradient(to right, #f73526, #e93322, #dc311f, #ce2f1b, #c12d18);
+  box-shadow: 5px 0 #dc311f, -5px 0 #dc311f, 0 -5px #dc311f, 0 5px #dc311f, 10px 0 #922113, -10px 0 #922113, 0 -10px #922113, 0 10px #922113, 0 0 0 5px #922113;
+  margin: 10px auto;
+}
+
+.toastify.green {
+  background-image: linear-gradient(to right, #a1dd9d, #8cd99d, #75d59f, #59d1a2, #31cda7);
+  box-shadow: 5px 0 #73d5a0, -5px 0 #73d5a0, 0 -5px #73d5a0, 0 5px #73d5a0, 10px 0 #1c8696, -10px 0 #1c8696, 0 -10px #1c8696, 0 10px #1c8696, 0 0 0 5px #1c8696;
+  margin: 10px auto;
+}
+
 @media (max-width: 500px) {
   header .hero .title h1 {
     margin-bottom: 20px;
@@ -492,9 +515,20 @@ main .pokedex__container {
     position: absolute;
     top: -75px;
   }
+  header .searcher .search-input__container .text-input {
+    max-width: 290px;
+  }
   main {
-    width: 95%;
+    width: 100%;
     min-width: 320px;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  main {
+    border-left: none;
+    border-right: none;
   }
 }
 

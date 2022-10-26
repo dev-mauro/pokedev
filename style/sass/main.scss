@@ -137,7 +137,7 @@ header {
         border: none;
         height: 60px;
         width: 100%;
-        max-width: 290px;
+        max-width: 310px;
         font-size: 1.2em;
         font-family: $pixeled;
         text-transform: uppercase;
@@ -212,14 +212,14 @@ header {
 }
 
 main {
+  width: fit-content;
+  min-width: 500px;
+  max-width: 95%;
   padding: 10px 30px;
+  margin: 0 auto;
   border: 5px solid black;
   background-color: #e93031;
   @include innerShadow(3px, 10px, #b52526, 0px 0px 20px #344616);
-  width: fit-content;
-  margin: 0 auto;
-  min-width: 500px;
-  max-width: 95%;
 
   .pokedex__container {
     @include b.px4(5px, black, $black);
@@ -229,15 +229,17 @@ main {
 }
 
 .cards-container {
-  max-height: calc(100vh - 70px);
   width: 100%;
-  overflow-y: scroll;
-  padding: 50px 5px 50px 10px;
+  // max-height: calc(100vh - 70px);
+  max-height: 90vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  @include innerShadow(3px, 10px, rgb(58, 58, 58));
+  padding: 50px 5px 50px 10px;
+  border: 3px solid black;
+  overflow-y: scroll;
+  @include innerShadow(1px, 10px, rgb(85, 85, 85));
 
   .card {
     @include b.px2(5px, rgb(49, 49, 49), $card-background);
@@ -328,6 +330,36 @@ main {
   background: #e93031;
 }
 
+.toastify {
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3em;
+  width: fit-content;
+  max-width: calc(100vw - 40px);
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+.toastify.red {
+  background-image: linear-gradient(to right, #f73526, #e93322, #dc311f, #ce2f1b, #c12d18);
+
+  @include b.px2(5px, #922113, #dc311f);
+}
+
+.toastify.green {
+  background-image: linear-gradient(
+    to right,
+    #a1dd9d,
+    #8cd99d,
+    #75d59f,
+    #59d1a2,
+    #31cda7
+  );
+
+  @include b.px2(5px, #1c8696, #73d5a0);
+}
+
+
 @media (max-width: 500px) {
   header {
     .hero {
@@ -343,10 +375,27 @@ main {
         }
       }
     }
+
+    .searcher {
+      .search-input__container {
+        .text-input {
+          max-width: 290px;
+        }
+      }
+    }
   }
 
   main {
-    width: 95%;
+    width: 100%;
     min-width: 320px;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    border-left: none;
+    border-right: none;
   }
 }

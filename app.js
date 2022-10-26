@@ -122,31 +122,37 @@ class Searcher {
     this.cardsContainer = document.querySelector(".cards-container");
     this.poke = new PokeApi();
     this.latestResult = [];
+    this.latestSearch = null;
+    this.latestNotification = {};
+    this.notify = Notify();
+    this.loading = Loading();
 
     this.setEvents();
   }
 
   //Realiza petición a la PokeAPI con la string
   search(string) {
-    if (string === "") return;
-
-    //Borra el resultado de la búsqueda anterior
-    this.latestResult = [];
-    this.cardsContainer.innerHTML = "";
+    if (!this.validSearch(string)) return;
 
     string = string.toLowerCase();
 
     const pokemon = this.poke.getPokemon(string);
     const pokemonList = this.poke.getType(string);
 
-    pokemon.then((response) => {
-      //console.log(response);
-      response ? this.buildLatestResult(response) : "";
-    });
+    this.notify.reset();
+    this.loading.loadingStart();
+    this.latestSearch = string;
 
+    pokemon.then((response) => {
+      response
+        ? this.buildLatestResult(response)
+        : this.noResult('poke', string);
+      });
+      
     pokemonList.then((response) => {
-      //console.log(response);
-      response ? this.buildLatestResult(response) : "";
+      response
+        ? this.buildLatestResult(response)
+        : this.noResult('type', string);
     });
   }
 
@@ -154,7 +160,6 @@ class Searcher {
   setEvents() {
     const inputSearch = () => {
       const string = this.input.value;
-      document.querySelector('main').hidden = false;
       this.search(string);
     };
 
@@ -164,11 +169,12 @@ class Searcher {
 
   //Construye array con todos los resultados de la búsqueda
   buildLatestResult(data) {
+    // Borra el resultado de la búsqueda anterior
+    this.latestResult = [];
+    this.cardsContainer.innerHTML = "";
+
     //Caso en que data sea una lista de pokemons
     if (data.pokemon) {
-      //console.log(typeof data.pokemon);
-      //console.log(data.pokemon[0]);
-
       data.pokemon.forEach((pokemon) => {
         const result = this.poke.getPokemon(pokemon.pokemon.name);
 
@@ -181,6 +187,12 @@ class Searcher {
       const newPokemon = new Pokemon(data);
       this.pushLatestResult(newPokemon);
     }
+
+    const string = this.input.value;
+    setTimeout(() => {
+      showToast(string, 'green', data.pokemon?.length || 1)
+    }, 500)
+    this.loading.alert();
   }
 
   //Agrega al array el resultado de la búsqueda
@@ -189,20 +201,113 @@ class Searcher {
     //console.log(pokemon.name, pokemon);
 
     this.latestResult.push(pokemon);
+
+    document.querySelector("main").hidden = false;
     this.cardsContainer.innerHTML += card.htmlElement;
+  }
+
+  noResult(type, string) {
+    this.notify[type](string);
+    this.loading.alert();
+  }
+
+  validSearch(string) {
+    if(string === '')
+      return false;
+
+    if (string == this.latestSearch){
+      showToast();
+      return false;
+    }
+
+    this.latestNotification = null;
+    return true;
+  }
+}
+
+const showToast = (string, type, count) => {
+  const currentToast = document.querySelector('.toastify');
+
+  if(currentToast) currentToast.remove();
+
+  const toastInfo = searcher.latestNotification || getToast(string, type, count);
+  Toastify(toastInfo).showToast();
+}
+
+const getToast = (string, type, count) => {
+  if(type == 'green') {
+    (count > 1)
+      ? string = `${count} ${string} pokemon found`
+      : string = `${string} found`
+  } else {
+    string = `${string} not found`
+  }
+
+  const toast = {
+    text: string,
+    duration: 3000,
+    position: 'center',
+    gravity: 'top',
+    className: type,
+  };
+
+  searcher.latestNotification = toast;
+
+  return toast;
+}
+
+const Notify = () => {
+  let pokeSuccess = true;
+  let typeSuccess = true;
+
+  return {
+    reset() {
+      pokeSuccess = true;
+      typeSuccess = true;
+    },
+    poke(string) {
+      pokeSuccess = false;
+      this.verify(string)
+    },
+    type(string) {
+      typeSuccess = false;
+      this.verify(string)
+    },
+    verify(string) {
+      const gottaNotify = !(pokeSuccess || typeSuccess);
+      (gottaNotify)
+        ? showToast(string, 'red')
+        : '';
+    }
+  }
+}
+
+const Loading = () => {
+  let loading = false;
+  let receivedAlerts = 0;
+  const logo = document.querySelector('.logo');
+
+  return {
+    reset() {
+      loading = false;
+      receivedAlerts = 0;
+    },
+    loadingStart() {
+      loading = true;
+      logo.src = 'https://user-images.githubusercontent.com/68218563/197868253-ea68bd8c-1c41-4b8b-8e72-c32f6af31f57.gif';
+    },
+    alert() {
+      receivedAlerts++;
+      this.verify();
+    },
+    verify() {
+      if(receivedAlerts == 2) {
+        logo.src = 'https://user-images.githubusercontent.com/68218563/197868213-fea100fe-a347-4038-8629-ad4726344d00.png';
+        this.reset();
+      }
+    }
   }
 }
 
 const searcher = new Searcher();
-document.querySelector('main').hidden = true;
-
-/*
-    función para hacer girar la pokeball
-    () => {
-        cargando = !cargando;
-
-        (cargando)
-            ? logo.src = './assets/img/loading-pokeball.gif'
-            : logo.src = './assets/img/pokeball-logo.png';
-    }
-*/
+document.querySelector("main").hidden = true;
