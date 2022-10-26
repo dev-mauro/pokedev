@@ -154,6 +154,7 @@ class Searcher {
   setEvents() {
     const inputSearch = () => {
       const string = this.input.value;
+      document.querySelector('main').hidden = false;
       this.search(string);
     };
 
@@ -193,6 +194,7 @@ class Searcher {
 }
 
 const searcher = new Searcher();
+document.querySelector('main').hidden = true;
 
 /*
     función para hacer girar la pokeball

@@ -225,22 +225,31 @@
 body {
   background-color: #fbfbfb;
   font-family: "Press Start 2P";
+  background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
+  background-color: #9ac84e;
+  background-size: contain;
+  padding-bottom: 100px;
 }
 
 header {
-  height: auto;
-  padding-top: 300px;
-  background-color: rgb(255, 213, 56);
+  width: 100%;
 }
 header .hero {
-  height: 300px;
+  width: 100%;
+  height: 80vh;
+  max-height: 700px;
+  min-height: 310px;
   align-items: center;
-  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 120px;
   position: relative;
   overflow-x: hidden;
-  background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg");
+  background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg"), linear-gradient(to top, #ffd538, #ffca2f, #ffbf26, #feb41f, #fda918);
   background-repeat: no-repeat;
   background-position-y: bottom;
+  background-color: rgb(255, 213, 56);
 }
 header .hero .title {
   display: flex;
@@ -296,12 +305,10 @@ header .searcher {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 400px;
+  height: 60vh;
+  max-height: 500px;
+  min-height: 350px;
   width: 100%;
-  background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
-  background-size: contain;
-  background-color: #9ac84e;
-  border-bottom: 1px solid black;
 }
 header .searcher .search-input__container {
   position: relative;
@@ -313,7 +320,7 @@ header .searcher .search-input__container .text-input {
   border: none;
   height: 60px;
   width: 100%;
-  max-width: 300px;
+  max-width: 290px;
   font-size: 1.2em;
   font-family: "Press Start 2P";
   text-transform: uppercase;
@@ -366,18 +373,36 @@ header .searcher button:hover {
   cursor: pointer;
 }
 
-.cards-container {
-  max-width: 1920px;
+main {
+  padding: 10px 30px;
+  border: 5px solid black;
+  background-color: #e93031;
+  box-shadow: inset 0px 3px 10px #b52526, inset 0px -3px 10px #b52526, inset 3px 0px 10px #b52526, inset -3px 0px 10px #b52526, 0px 0px 20px #344616;
+  width: fit-content;
   margin: 0 auto;
-  padding: 20px 0;
-  min-height: 500px;
+  min-width: 500px;
+  max-width: 95%;
+}
+main .pokedex__container {
+  box-shadow: 5px 0 rgb(81, 81, 81), -5px 0 rgb(81, 81, 81), 0 -5px rgb(81, 81, 81), 0 5px rgb(81, 81, 81), 10px 0 rgb(81, 81, 81), -10px 0 rgb(81, 81, 81), 0 -10px rgb(81, 81, 81), 0 10px rgb(81, 81, 81), 0 0 0 5px rgb(81, 81, 81), 15px 0 rgb(81, 81, 81), -15px 0 rgb(81, 81, 81), 0 15px rgb(81, 81, 81), 0 -15px rgb(81, 81, 81), 0 -5px 0 5px rgb(81, 81, 81), 0 5px 0 5px rgb(81, 81, 81), 5px 0 0 5px rgb(81, 81, 81), -5px 0 0 5px rgb(81, 81, 81), 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 10px 0 0 5px black, -10px 0 0 5px black, 0 10px 0 5px black, 0 -10px 0 5px black, 0 0 0 10px black;
+  margin: 20px auto;
+  background-color: #d5d5d5;
+  width: 100%;
+}
+
+.cards-container {
+  max-height: calc(100vh - 70px);
+  width: 100%;
+  overflow-y: scroll;
+  padding: 50px 5px 50px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  box-shadow: inset 0px 3px 10px rgb(58, 58, 58), inset 0px -3px 10px rgb(58, 58, 58), inset 3px 0px 10px rgb(58, 58, 58), inset -3px 0px 10px rgb(58, 58, 58), 0 0 0 0;
 }
 .cards-container .card {
-  box-shadow: 5px 0 rgb(224, 224, 224), -5px 0 rgb(224, 224, 224), 0 -5px rgb(224, 224, 224), 0 5px rgb(224, 224, 224), 10px 0 rgb(81, 81, 81), -10px 0 rgb(81, 81, 81), 0 -10px rgb(81, 81, 81), 0 10px rgb(81, 81, 81), 0 0 0 5px rgb(81, 81, 81);
+  box-shadow: 5px 0 rgb(224, 224, 224), -5px 0 rgb(224, 224, 224), 0 -5px rgb(224, 224, 224), 0 5px rgb(224, 224, 224), 10px 0 rgb(49, 49, 49), -10px 0 rgb(49, 49, 49), 0 -10px rgb(49, 49, 49), 0 10px rgb(49, 49, 49), 0 0 0 5px rgb(49, 49, 49);
   margin: 10px auto;
   aspect-ratio: 0.8;
   position: relative;
@@ -439,6 +464,38 @@ header .searcher button:hover {
 }
 .cards-container .card:hover .selected-card {
   display: block;
+}
+
+.cards-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #6890f0;
+  border: 2px solid black;
+}
+
+.cards-container::-webkit-scrollbar-thumb:active {
+  background: #e93031;
+}
+
+@media (max-width: 500px) {
+  header .hero .title h1 {
+    margin-bottom: 20px;
+    font-size: 45px;
+  }
+  header .hero .title .logo {
+    position: absolute;
+    top: -75px;
+  }
+  main {
+    width: 95%;
+    min-width: 320px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

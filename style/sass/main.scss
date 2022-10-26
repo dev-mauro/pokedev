@@ -14,6 +14,13 @@ $pikayellow: rgb(255, 213, 56);
 $searcher-color: #fbfbfb;
 $grassgreen: #9ac84e;
 
+@mixin innerShadow($width, $extension, $color, $extra: 0 0 0 0) {
+  box-shadow: inset 0px $width $extension $color,
+    inset 0px calc($width * -1) $extension $color,
+    inset $width 0px $extension $color,
+    inset calc($width * -1) 0px $extension $color, $extra;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,22 +30,33 @@ $grassgreen: #9ac84e;
 body {
   background-color: $background-white;
   font-family: $pixeled;
+  background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
+  background-color: $grassgreen;
+  background-size: contain;
+  padding-bottom: 100px;
 }
 
 header {
-  height: auto;
-  padding-top: 300px;
-  background-color: $pikayellow;
+  width: 100%;
 
   .hero {
-    height: 300px;
+    width: 100%;
+    height: 80vh;
+    max-height: 700px;
+    min-height: 310px;
     align-items: center;
-    padding: 100px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 120px;
+
     position: relative;
     overflow-x: hidden;
-    background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg");
+    background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg"), linear-gradient(to top, #ffd538, #ffca2f, #ffbf26, #feb41f, #fda918);
     background-repeat: no-repeat;
     background-position-y: bottom;
+    background-color: $pikayellow;
 
     .title {
       display: flex;
@@ -102,12 +120,11 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 400px;
+
+    height: 60vh;
+    max-height: 500px;
+    min-height: 350px;
     width: 100%;
-    background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
-    background-size: contain;
-    background-color: $grassgreen;
-    border-bottom: 1px solid black;
 
     .search-input__container {
       position: relative;
@@ -120,7 +137,7 @@ header {
         border: none;
         height: 60px;
         width: 100%;
-        max-width: 300px;
+        max-width: 290px;
         font-size: 1.2em;
         font-family: $pixeled;
         text-transform: uppercase;
@@ -194,18 +211,36 @@ header {
   }
 }
 
-.cards-container {
-  max-width: 1920px;
+main {
+  padding: 10px 30px;
+  border: 5px solid black;
+  background-color: #e93031;
+  @include innerShadow(3px, 10px, #b52526, 0px 0px 20px #344616);
+  width: fit-content;
   margin: 0 auto;
-  padding: 20px 0;
-  min-height: 500px;
+  min-width: 500px;
+  max-width: 95%;
+
+  .pokedex__container {
+    @include b.px4(5px, black, $black);
+    background-color: #d5d5d5;
+    width: 100%;
+  }
+}
+
+.cards-container {
+  max-height: calc(100vh - 70px);
+  width: 100%;
+  overflow-y: scroll;
+  padding: 50px 5px 50px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  @include innerShadow(3px, 10px, rgb(58, 58, 58));
 
   .card {
-    @include b.px2(5px, $black, $card-background);
+    @include b.px2(5px, rgb(49, 49, 49), $card-background);
     aspect-ratio: 0.8;
     position: relative;
     width: 200px;
@@ -273,5 +308,45 @@ header {
     .selected-card {
       display: block;
     }
+  }
+}
+
+.cards-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #6890f0;
+  border: 2px solid black;
+}
+
+.cards-container::-webkit-scrollbar-thumb:active {
+  background: #e93031;
+}
+
+@media (max-width: 500px) {
+  header {
+    .hero {
+      .title {
+        h1 {
+          margin-bottom: 20px;
+          font-size: 45px;
+        }
+
+        .logo {
+          position: absolute;
+          top: -75px;
+        }
+      }
+    }
+  }
+
+  main {
+    width: 95%;
+    min-width: 320px;
   }
 }
