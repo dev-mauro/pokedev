@@ -34,6 +34,7 @@ $type-info: (
 @each $type, $color in $type-info {
   .#{$type} {
     background-color: $color;
+    text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
     @include b.px1(3px, darken($color, 5%));
   }
 

@@ -39,9 +39,9 @@
         <div class="search-input__container">
           <img src="https://user-images.githubusercontent.com/68218563/197868990-7e51478c-a62e-440f-a543-871cb4e7ab03.png" alt="search icon" />
           <input class="text-input" type="text" placeholder="Pikachu..." />
-          <div class="show-favorites">
+          <button class="show-favorites">
             <figure class="show-favorites__hitbox"></figure>
-          </div>
+          </button>
         </div>
 
         <div class="search-button__container">
@@ -57,12 +57,37 @@
     </header>
 
     <main class="">
-        <div class="pokedex__container" id="search-result">
+        <section class="pokedex__container" id="search-result">
             <section class="cards-container">
             </section>
-        </div>
+        </section>
     </main>
 
+    <section class="type-list__container">
+      <h2>pokemon<span>types</span></h2>
+      <ul class ="type-list">
+        <li class="type normal"></li>
+        <li class="type fire"></li>
+        <li class="type water"></li>
+        <li class="type grass"></li>
+        <li class="type electric"></li>
+        <li class="type ice"></li>
+        <li class="type fighting"></li>
+        <li class="type poison"></li>
+        <li class="type ground"></li>
+        <li class="type flying"></li>
+        <li class="type psychic"></li>
+        <li class="type bug"></li>
+        <li class="type rock"></li>
+        <li class="type ghost"></li>
+        <li class="type dark"></li>
+        <li class="type dragon"></li>
+        <li class="type steel"></li>
+        <li class="type fairy"></li>
+      </ul>
+    </section>
+
+    <button class="focus-searcher__helper"></button>
     <!-- CDN Toastify -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="app.js"></script>

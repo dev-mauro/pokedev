@@ -12,6 +12,7 @@
 
 .normal {
   background-color: #a8a878;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #9e9e68, -3px 0 #9e9e68, 0 -3px #9e9e68, 0 3px #9e9e68;
   margin: 3px auto;
 }
@@ -22,6 +23,7 @@
 
 .fire {
   background-color: rgb(242, 143, 62);
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #f08126, -3px 0 #f08126, 0 -3px #f08126, 0 3px #f08126;
   margin: 3px auto;
 }
@@ -32,6 +34,7 @@
 
 .water {
   background-color: #6890f0;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #517fee, -3px 0 #517fee, 0 -3px #517fee, 0 3px #517fee;
   margin: 3px auto;
 }
@@ -42,6 +45,7 @@
 
 .grass {
   background-color: #78c850;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #69c23d, -3px 0 #69c23d, 0 -3px #69c23d, 0 3px #69c23d;
   margin: 3px auto;
 }
@@ -52,6 +56,7 @@
 
 .electric {
   background-color: rgb(194, 194, 42);
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #adad25, -3px 0 #adad25, 0 -3px #adad25, 0 3px #adad25;
   margin: 3px auto;
 }
@@ -62,6 +67,7 @@
 
 .ice {
   background-color: #98d8d8;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #86d1d1, -3px 0 #86d1d1, 0 -3px #86d1d1, 0 3px #86d1d1;
   margin: 3px auto;
 }
@@ -72,6 +78,7 @@
 
 .fighting {
   background-color: #c03028;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #ab2b24, -3px 0 #ab2b24, 0 -3px #ab2b24, 0 3px #ab2b24;
   margin: 3px auto;
 }
@@ -82,6 +89,7 @@
 
 .poison {
   background-color: #a040a0;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #8e398e, -3px 0 #8e398e, 0 -3px #8e398e, 0 3px #8e398e;
   margin: 3px auto;
 }
@@ -92,6 +100,7 @@
 
 .ground {
   background-color: #e0c068;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #dcb753, -3px 0 #dcb753, 0 -3px #dcb753, 0 3px #dcb753;
   margin: 3px auto;
 }
@@ -102,6 +111,7 @@
 
 .flying {
   background-color: rgb(82, 102, 137);
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #485a79, -3px 0 #485a79, 0 -3px #485a79, 0 3px #485a79;
   margin: 3px auto;
 }
@@ -112,6 +122,7 @@
 
 .psychic {
   background-color: #f85888;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #f74077, -3px 0 #f74077, 0 -3px #f74077, 0 3px #f74077;
   margin: 3px auto;
 }
@@ -122,6 +133,7 @@
 
 .bug {
   background-color: #a8b820;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #94a21c, -3px 0 #94a21c, 0 -3px #94a21c, 0 3px #94a21c;
   margin: 3px auto;
 }
@@ -132,6 +144,7 @@
 
 .rock {
   background-color: rgb(190, 173, 127);
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #b5a26e, -3px 0 #b5a26e, 0 -3px #b5a26e, 0 3px #b5a26e;
   margin: 3px auto;
 }
@@ -142,6 +155,7 @@
 
 .ghost {
   background-color: #705898;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #644f88, -3px 0 #644f88, 0 -3px #644f88, 0 3px #644f88;
   margin: 3px auto;
 }
@@ -152,6 +166,7 @@
 
 .dark {
   background-color: #5b5974;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #504e66, -3px 0 #504e66, 0 -3px #504e66, 0 3px #504e66;
   margin: 3px auto;
 }
@@ -162,6 +177,7 @@
 
 .dragon {
   background-color: #7038f8;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #5e1ff7, -3px 0 #5e1ff7, 0 -3px #5e1ff7, 0 3px #5e1ff7;
   margin: 3px auto;
 }
@@ -172,6 +188,7 @@
 
 .steel {
   background-color: #b8b8d0;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #a9a9c6, -3px 0 #a9a9c6, 0 -3px #a9a9c6, 0 3px #a9a9c6;
   margin: 3px auto;
 }
@@ -182,6 +199,7 @@
 
 .fairy {
   background-color: #f0b6bc;
+  text-shadow: 0 2px 1px #000, 2px 0 1px #000, 0 -2px 1px #000, -2px 0 1px #000;
   box-shadow: 3px 0 #eca1a9, -3px 0 #eca1a9, 0 -3px #eca1a9, 0 3px #eca1a9;
   margin: 3px auto;
 }
@@ -253,8 +271,9 @@ header .hero {
   position: relative;
   overflow-x: hidden;
   background-image: url("https://user-images.githubusercontent.com/68218563/197868993-785755a1-6a76-481e-9979-34bbdb749a8c.svg"), linear-gradient(to top, #ffd538, #ffca2f, #ffbf26, #feb41f, #fda918);
+  background-size: auto;
   background-repeat: no-repeat;
-  background-position-y: bottom;
+  background-position: bottom;
   background-color: rgb(255, 213, 56);
 }
 header .hero .title {
@@ -335,41 +354,43 @@ header .searcher .search-input__container .text-input {
   margin: 15px auto;
   background-color: rgb(224, 224, 224);
   position: relative;
-  z-index: 4;
+  z-index: 1;
 }
 header .searcher .search-input__container img {
   position: absolute;
+  z-index: 2;
   right: 0px;
   top: 10px;
   height: 70px;
 }
-header .searcher .show-favorites {
+header .searcher .specialSearch-buttons, header .searcher .show-favorites {
   width: 40px;
   height: 40px;
   position: absolute;
-  bottom: 0;
-  right: calc(50% - 20px);
+  bottom: 85px;
   background-color: rgb(224, 224, 224);
+  border: none;
   box-shadow: 5px 0 rgb(224, 224, 224), -5px 0 rgb(224, 224, 224), 0 -5px rgb(224, 224, 224), 0 5px rgb(224, 224, 224), 10px 0 rgb(224, 224, 224), -10px 0 rgb(224, 224, 224), 0 -10px rgb(224, 224, 224), 0 10px rgb(224, 224, 224), 0 0 0 5px rgb(224, 224, 224), 15px 0 rgb(81, 81, 81), -15px 0 rgb(81, 81, 81), 0 15px rgb(81, 81, 81), 0 -15px rgb(81, 81, 81), 0 -5px 0 5px rgb(81, 81, 81), 0 5px 0 5px rgb(81, 81, 81), 5px 0 0 5px rgb(81, 81, 81), -5px 0 0 5px rgb(81, 81, 81);
   margin: 15px auto;
-  transition: all 0.5s;
 }
-header .searcher .show-favorites figure {
-  background-image: url("https://user-images.githubusercontent.com/68218563/198399898-2aa28e32-a2bf-4be5-9d6c-95c74550275d.png");
-  background-size: 50px;
-  background-repeat: no-repeat;
-  background-position: center;
+header .searcher .specialSearch-buttons figure, header .searcher .show-favorites figure {
   width: 65px;
   height: 65px;
   position: relative;
-  right: 12px;
+  right: 13px;
   bottom: 13px;
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-header .searcher .show-favorites figure:hover {
+header .searcher .specialSearch-buttons figure:hover, header .searcher .show-favorites figure:hover {
   cursor: pointer;
 }
-header .searcher .show-favorites:active {
-  bottom: 85px;
+header .searcher .show-favorites {
+  right: calc(50% - 20px);
+}
+header .searcher .show-favorites figure {
+  background-image: url("https://user-images.githubusercontent.com/68218563/198399898-2aa28e32-a2bf-4be5-9d6c-95c74550275d.png");
 }
 header .searcher input:focus {
   outline: none;
@@ -413,31 +434,18 @@ header .searcher button:hover {
 header .search-button:focus {
   outline: none;
 }
-header .searcher:focus-within .show-favorites {
-  display: block;
-  animation-name: favMovement;
-  animation-duration: 0.8s;
-  bottom: 85px;
-}
-@keyframes favMovement {
-  from {
-    bottom: 0px;
-  }
-  to {
-    bottom: 85px;
-  }
-}
 header .down-arrow {
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  left: calc(50% - 25px);
   width: 50px;
   height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 25px);
+  z-index: 1;
   background-image: url("https://user-images.githubusercontent.com/68218563/197870442-002113cd-491c-4772-acf2-772b0f3f11b8.png");
-  background-repeat: no-repeat;
-  transition: all 1s;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: auto;
+  transition: all 1s;
 }
 header .down-arrow.move {
   transform: translateY(45px);
@@ -446,9 +454,9 @@ header .down-arrow.move {
 main {
   width: fit-content;
   min-width: 500px;
-  max-width: 95%;
+  max-width: 1200px;
   padding: 10px 30px;
-  margin: 0 auto;
+  margin: 0 auto 150px;
   border: 5px solid black;
   background-color: #e93031;
   box-shadow: inset 0px 3px 10px #b52526, inset 0px -3px 10px #b52526, inset 3px 0px 10px #b52526, inset -3px 0px 10px #b52526, 0px 0px 20px #344616;
@@ -493,6 +501,7 @@ main .pokedex__container {
   height: 100px;
   margin: 0 auto;
   background-size: 110%;
+  background-repeat: no-repeat;
   background-position: center;
 }
 .cards-container .card .card-header .pokemon-id {
@@ -545,9 +554,54 @@ main .pokedex__container {
   text-align: center;
   background-color: rgb(224, 224, 224);
   background-image: url("https://user-images.githubusercontent.com/68218563/197868863-1394dede-bb87-4641-8522-03a6292d4364.png");
-  background-position: center;
   background-size: 150%;
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+.type-list__container {
+  font-family: "VT323";
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 10px 50px black;
+  position: relative;
+  z-index: 1;
+}
+.type-list__container .type-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 5px 0 #ADADAD, -5px 0 #ADADAD, 0 -5px #ADADAD, 0 5px #ADADAD, 10px 0 rgb(81, 81, 81), -10px 0 rgb(81, 81, 81), 0 -10px rgb(81, 81, 81), 0 10px rgb(81, 81, 81), 0 0 0 5px rgb(81, 81, 81);
+  margin: 10px auto;
+  padding: 30px 0;
+  background-image: url("https://user-images.githubusercontent.com/68218563/197868863-1394dede-bb87-4641-8522-03a6292d4364.png"), linear-gradient(to right top, #e0e0e0, #d7d7d7, #cdcdcd, #c4c4c4, #bbbbbb);
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.type-list__container .type {
+  margin: 10px;
+  width: 50px;
+  padding: 5px 0;
+}
+.type-list__container .type:hover {
+  cursor: pointer;
+}
+.type-list__container h2 {
+  width: 100%;
+  font-family: "Press Start 2P";
+  text-transform: capitalize;
+  text-align: center;
+  position: absolute;
+  top: -2.1em;
+  padding: 5px 0;
+  color: black;
+}
+.type-list__container h2 span {
+  display: inline-block;
+  padding-left: 5px;
+  color: red;
 }
 
 .cards-container::-webkit-scrollbar {
@@ -590,8 +644,8 @@ main .pokedex__container {
 .fullscreen-view__container .fullview figure {
   width: 300px;
   height: 300px;
-  background-repeat: no-repeat;
   background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto 10px;
 }
@@ -654,6 +708,25 @@ main .pokedex__container {
   margin: 15px auto;
 }
 
+.focus-searcher__helper {
+  position: fixed;
+  z-index: 2;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-image: url("https://user-images.githubusercontent.com/68218563/197868990-7e51478c-a62e-440f-a543-871cb4e7ab03.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+}
+
+.focus-searcher__helper:hover {
+  cursor: pointer;
+}
+
 .toastify {
   text-transform: uppercase;
   text-align: center;
@@ -698,13 +771,19 @@ main .pokedex__container {
     width: 100%;
     min-width: 320px;
     max-width: 100%;
-    margin: 0;
+    margin-bottom: 150px;
   }
 }
 @media (max-width: 400px) {
   main {
     border-left: none;
     border-right: none;
+  }
+}
+@media (max-width: 366px) {
+  .type-list__container h2 {
+    width: 120%;
+    left: -26px;
   }
 }
 

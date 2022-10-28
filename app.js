@@ -152,6 +152,7 @@ class Searcher {
     this.loading = Loading();
 
     this.setEvents();
+    this.toggleSearcherFocusButton();
   }
 
   search(string, type = false) {
@@ -206,7 +207,6 @@ class Searcher {
         }
       });
 
-      this.showDownArrow();
     };
 
     this.button.onclick = inputSearch;
@@ -219,11 +219,33 @@ class Searcher {
       }
     })
 
-    document.querySelector('.show-favorites__hitbox').addEventListener('click', this.showFavorites.bind(this));    
+    //Evento boton mostrar favoritos
+    document.querySelector('.show-favorites__hitbox').addEventListener('click', this.showFavorites.bind(this));
+    
+    //Evento focus buscador en la lupa
+    document.querySelector('.focus-searcher__helper').addEventListener('click', () => setTimeout(() => this.button.focus(), 300));
+
+    this.setPokemonTypesEvent(); 
+  }
+
+  setPokemonTypesEvent() {
+    const typeList = document.querySelector('.type-list');
+    console.log(typeList)
+    typeList.childNodes.forEach( type => {
+      const types = type.classList?.value;
+      if(!types) return;
+
+      type.addEventListener('click', () => {
+        this.input.value = types.split(' ')[1];
+        this.button.click();
+        setTimeout(() => this.button.focus(), 500);
+      });
+    });
   }
 
   showFavorites() {
     const idList = favoritePokemon.favorites;
+    this.latestSearch = 'favorites';
     this.cardsContainer.innerHTML = (idList.length)
       ? ''
       : 'try searching something...';
@@ -256,7 +278,6 @@ class Searcher {
   }
   
   favoritesDisplayed({length}) {
-    console.log('ejecutando favorites');
     showToast({
       text: `${length} favorite pokemon found`,
       duration: 3000,
@@ -264,6 +285,7 @@ class Searcher {
       gravity: 'top',
       className: 'green'
     });
+    setTimeout(() => this.toggleSearcherFocusButton(), 500);
     this.showDownArrow();
   }
 
@@ -290,10 +312,22 @@ class Searcher {
 
     const string = this.input.value;
     setTimeout(() => {
+      this.toggleSearcherFocusButton();
       showSearchToast(string, "green", data.pokemon?.length || 1);
     }, 500);
 
     this.showDownArrow();
+  }
+
+  toggleSearcherFocusButton() {
+    const containerHeight = this.cardsContainer.clientHeight;
+    const viewportHeight = window.visualViewport.height;
+
+    const helperButton = document.querySelector('.focus-searcher__helper');
+
+    (containerHeight > viewportHeight * 0.6)
+    ? helperButton.hidden = false
+    : helperButton.hidden = true;
   }
 
   //Construye la carta para agregarla al cardContainer
@@ -311,7 +345,7 @@ class Searcher {
 
   //Añade la card a cardContainer
   addCard(card) {
-    document.querySelector("main").hidden = false;
+    document.querySelector('main').hidden = false;
     this.cardsContainer.appendChild(card);
   }
 
@@ -580,4 +614,4 @@ const favoritePokemon = {
 };
 
 const searcher = new Searcher();
-document.querySelector("main").hidden = true;
+document.querySelector('main').hidden = true;
