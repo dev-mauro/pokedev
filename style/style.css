@@ -334,12 +334,42 @@ header .searcher .search-input__container .text-input {
   box-shadow: 5px 0 lightgray, -5px 0 lightgray, 0 -5px lightgray, 0 5px lightgray, 10px 0 lightgray, -10px 0 lightgray, 0 -10px lightgray, 0 10px lightgray, 0 0 0 5px lightgray, 15px 0 rgb(81, 81, 81), -15px 0 rgb(81, 81, 81), 0 15px rgb(81, 81, 81), 0 -15px rgb(81, 81, 81), 0 -5px 0 5px rgb(81, 81, 81), 0 5px 0 5px rgb(81, 81, 81), 5px 0 0 5px rgb(81, 81, 81), -5px 0 0 5px rgb(81, 81, 81);
   margin: 15px auto;
   background-color: rgb(224, 224, 224);
+  position: relative;
+  z-index: 4;
 }
 header .searcher .search-input__container img {
   position: absolute;
   right: 0px;
   top: 10px;
   height: 70px;
+}
+header .searcher .show-favorites {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: calc(50% - 20px);
+  background-color: rgb(224, 224, 224);
+  box-shadow: 5px 0 rgb(224, 224, 224), -5px 0 rgb(224, 224, 224), 0 -5px rgb(224, 224, 224), 0 5px rgb(224, 224, 224), 10px 0 rgb(224, 224, 224), -10px 0 rgb(224, 224, 224), 0 -10px rgb(224, 224, 224), 0 10px rgb(224, 224, 224), 0 0 0 5px rgb(224, 224, 224), 15px 0 rgb(81, 81, 81), -15px 0 rgb(81, 81, 81), 0 15px rgb(81, 81, 81), 0 -15px rgb(81, 81, 81), 0 -5px 0 5px rgb(81, 81, 81), 0 5px 0 5px rgb(81, 81, 81), 5px 0 0 5px rgb(81, 81, 81), -5px 0 0 5px rgb(81, 81, 81);
+  margin: 15px auto;
+  transition: all 0.5s;
+}
+header .searcher .show-favorites figure {
+  background-image: url("https://user-images.githubusercontent.com/68218563/198399898-2aa28e32-a2bf-4be5-9d6c-95c74550275d.png");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 65px;
+  height: 65px;
+  position: relative;
+  right: 12px;
+  bottom: 13px;
+}
+header .searcher .show-favorites figure:hover {
+  cursor: pointer;
+}
+header .searcher .show-favorites:active {
+  bottom: 85px;
 }
 header .searcher input:focus {
   outline: none;
@@ -383,6 +413,20 @@ header .searcher button:hover {
 header .search-button:focus {
   outline: none;
 }
+header .searcher:focus-within .show-favorites {
+  display: block;
+  animation-name: favMovement;
+  animation-duration: 0.8s;
+  bottom: 85px;
+}
+@keyframes favMovement {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 85px;
+  }
+}
 header .down-arrow {
   position: absolute;
   bottom: 0;
@@ -419,6 +463,7 @@ main .pokedex__container {
 .cards-container {
   width: 100%;
   max-height: 90vh;
+  min-height: 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -526,9 +571,9 @@ main .pokedex__container {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   top: 0;
-  z-index: 3;
+  z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;

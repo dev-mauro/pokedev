@@ -150,6 +150,8 @@ header {
         padding: 10px 50px 10px 15px;
         @include b.px3(5px, $black, darken($card-background, 5%));
         background-color: $card-background;
+        position: relative;
+        z-index: 4;
         // text-align: center;
       }
 
@@ -159,6 +161,37 @@ header {
         top: 10px;
         height: 70px;
       }
+    }
+
+    .show-favorites {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 0;
+      right: calc(50% - 20px);
+      background-color: $card-background;
+      @include b.px3(5px, $black, $card-background);
+      transition: all .5s;
+      
+      figure {
+        background-image: url('https://user-images.githubusercontent.com/68218563/198399898-2aa28e32-a2bf-4be5-9d6c-95c74550275d.png');
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 65px;
+        height: 65px;
+        position: relative;
+        right: 12px;
+        bottom: 13px;
+      }
+
+      figure:hover {
+        cursor: pointer;
+      }
+    }
+
+    .show-favorites:active {
+      bottom: 85px;
     }
 
     input:focus {
@@ -213,8 +246,26 @@ header {
       cursor: pointer;
     }
   }
+
   .search-button:focus {
     outline: none;
+  }
+
+  .searcher:focus-within {
+    .show-favorites {
+      display: block;
+      animation-name: favMovement;
+      animation-duration: .8s;
+      bottom: 85px;
+    }
+  }
+
+  @keyframes favMovement {
+    from {
+      bottom: 0px;
+    } to {
+      bottom: 85px;
+    }
   }
 
   .down-arrow {
@@ -256,6 +307,7 @@ main {
 .cards-container {
   width: 100%;
   max-height: 90vh;
+  min-height: 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -374,9 +426,9 @@ main {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0,0,0,.4);
   top: 0;
-  z-index: 3;
+  z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;

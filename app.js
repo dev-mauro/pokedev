@@ -205,6 +205,8 @@ class Searcher {
           this.noResult('type', string)
         }
       });
+
+      this.showDownArrow();
     };
 
     this.button.onclick = inputSearch;
@@ -217,8 +219,53 @@ class Searcher {
       }
     })
 
-    
+    document.querySelector('.show-favorites__hitbox').addEventListener('click', this.showFavorites.bind(this));    
+  }
+
+  showFavorites() {
+    const idList = favoritePokemon.favorites;
+    this.cardsContainer.innerHTML = (idList.length)
+      ? ''
+      : 'try searching something...';
+
+    //Si no hay favoritos
+    if(idList.length == 0){
+      this.noFavoritesYet();
+      return;
     }
+
+    idList.forEach(id => {
+      const result = this.poke.getPokemon(id);
+
+      result.then((response) => {
+        this.addPokemon(response);
+      });
+    })
+
+    this.favoritesDisplayed(idList);
+  }
+
+  noFavoritesYet() {
+    showToast({
+      text: `no favorite pokemon yet :(`,
+      duration: 3000,
+      position: 'center',
+      gravity: 'bottom',
+      className: 'yellow'
+    });
+  }
+  
+  favoritesDisplayed({length}) {
+    console.log('ejecutando favorites');
+    showToast({
+      text: `${length} favorite pokemon found`,
+      duration: 3000,
+      position: 'center',
+      gravity: 'top',
+      className: 'green'
+    });
+    this.showDownArrow();
+  }
 
   //Construye array con todos los resultados de la búsqueda
   buildCardContainer(data) {
