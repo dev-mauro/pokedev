@@ -689,6 +689,7 @@ main .pokedex__container {
   display: flex;
   flex-shrink: 0;
   justify-content: flex-start;
+  align-items: center;
   padding-left: 10px;
   margin: 0 auto;
   overflow-x: scroll;
@@ -724,6 +725,9 @@ main .pokedex__container {
 }
 .fullscreen-view__container .evolution-container .evolution:hover figure {
   transform: scale(1.15);
+}
+.fullscreen-view__container .evolution-container img {
+  height: 100px;
 }
 .fullscreen-view__container .close-button {
   position: absolute;

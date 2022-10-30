@@ -531,6 +531,7 @@ main {
     display: flex;
     flex-shrink: 0;
     justify-content: flex-start;
+    align-items: center;
     padding-left: 10px;
     margin: 0 auto;
     overflow-x: scroll;
@@ -571,6 +572,10 @@ main {
       figure {
         transform: scale(1.15);
       }
+    }
+
+    img {
+      height: 100px;
     }
   }
   .close-button {

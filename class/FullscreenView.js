@@ -40,7 +40,9 @@ class FullscreenView {
           <p class="poke-stat weight">Weight: ${this.pokemon.weight}Kg</p>
         </div>
 
-        <section class="evolution-container"><section>
+        <section class="evolution-container">
+          <img class="loading" src="https://user-images.githubusercontent.com/68218563/197868253-ea68bd8c-1c41-4b8b-8e72-c32f6af31f57.gif">
+        <section>
       `;
 
     fullviewCard.innerHTML = innerHTML;
@@ -131,6 +133,7 @@ class FullscreenView {
 
     pokemonChain.then((response) => {
       this.evolutionContainer = document.querySelector(".evolution-container");
+      this.evolutionContainer.innerHTML = "";
 
       if (!response || response.length == 0) {
         this.addEvolution(this.pokemon, this.evolutionContainer);
@@ -156,6 +159,7 @@ class FullscreenView {
     const evolution = document.createElement("div");
     evolution.classList.add("evolution");
 
+    //evento para cambiar el pokemon en vista completa
     evolution.addEventListener("click", () => {
       this.pokemon = pokemon;
       this.updateFavoriteBackground();
