@@ -452,20 +452,34 @@ main {
     width: 90%;
     max-width: 550px;
     min-width: 300px;
-    padding: 60px 0 30px;
+    padding: 60px 0 10px;
     aspect-ratio: initial;
+
+    .types-container {
+      .type {
+        display: inline-block;
+        margin-right: 10px;
+        width: 80px;
+        line-height: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        font-family: $pixeled2;
+      }
+    }
 
     .pokemon-name {
       text-transform: uppercase;
       max-width: 300px;
-      margin: 0 auto;
+      margin: 10px auto 0;
     }
 
     figure {
       width: 300px;
       height: 300px;
       @include set-background(contain, center, no-repeat);
-      margin: 0 auto 10px;
+      margin: 0 auto;
     }
 
     .pokemon-id {
@@ -482,7 +496,7 @@ main {
       font-family: $pixeled2;
       font-size: 2rem;
       text-align: left;
-      padding: 20px 10px;
+      padding: 10px 10px 20px;
       text-align: center;
       margin: 0 auto;
     }
@@ -540,14 +554,14 @@ main {
         margin-bottom: 5px;
       }
 
-      span {
+      .type {
         display: block;
         width: 80px;
         line-height: 20px;
         height: 20px;
-        font-size: 1rem;
-        letter-spacing: 1px;
         margin-bottom: 10px;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
       }
     }
 
@@ -739,6 +753,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 //MEDIAQUERIES----------------
+@media screen and (max-height: 890px) {
+  .fullscreen-view__container {
+    .fullview {
+      .close-button {
+        top: -10px;
+        right: -5px;
+      }
+    }
+  }
+}
+
 @media (max-width: 500px) {
   header {
     .hero {
@@ -775,8 +800,8 @@ body::-webkit-scrollbar-thumb {
     .fullview {
       width: 100vw;
       height: 100%;
+      padding-top: 85px;
       max-width: none;
-      padding-top: 100px;
       overflow-y: scroll;
 
       .close-button {
@@ -822,13 +847,13 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 850px) {
   .fullscreen-view__container {
     .fullview {
       width: 100vw;
       height: 100%;
+      padding-top: 85px;
       max-width: none;
-      padding-top: 100px;
       overflow-y: scroll;
 
       .close-button {

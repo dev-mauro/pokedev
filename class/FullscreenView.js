@@ -30,6 +30,7 @@ class FullscreenView {
         <figure class="fullview-sprite" style="background-image: url('${
           this.pokemon.frontSprite
         }')"></figure>
+        <div class="types-container">${this.pokemon.typesToSpan()}</div>
         <h2 class="pokemon-name">${this.pokemon.getName()}</h2>
         <span class="pokemon-id">${this.pokemon.id}</span>
         <div class="favorite-button"></div>
@@ -164,12 +165,14 @@ class FullscreenView {
       const pokemonId = document.querySelector(".fullview .pokemon-id");
       const height = document.querySelector(".fullview .height");
       const weight = document.querySelector(".fullview .weight");
+      const types = document.querySelector(".fullview .types-container");
 
       sprite.style.backgroundImage = `url(${this.pokemon.frontSprite})`;
       pokemonName.innerHTML = this.pokemon.getName();
       pokemonId.innerHTML = this.pokemon.id;
       height.innerHTML = `Height: ${this.pokemon.height}cm`;
       weight.innerHTML = `Weight: ${this.pokemon.weight}Kg`;
+      types.innerHTML = this.pokemon.typesToSpan();
     });
 
     return evolution;
