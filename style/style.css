@@ -250,7 +250,6 @@ body {
   background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
   background-color: #9ac84e;
   background-size: contain;
-  padding-bottom: 100px;
   position: relative;
   scroll-behavior: smooth;
 }
@@ -596,29 +595,13 @@ main .pokedex__container {
   position: absolute;
   top: -2.1em;
   padding: 5px 0;
-  color: black;
+  text-shadow: 0 3px black;
+  color: rgb(81, 81, 81);
 }
 .type-list__container h2 span {
   display: inline-block;
   padding-left: 5px;
   color: red;
-}
-
-.cards-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.cards-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.cards-container::-webkit-scrollbar-thumb {
-  background: #6890f0;
-  border: 2px solid black;
-}
-
-.cards-container::-webkit-scrollbar-thumb:active {
-  background: #e93031;
 }
 
 .fullscreen-view__container {
@@ -633,13 +616,16 @@ main .pokedex__container {
   align-items: center;
 }
 .fullscreen-view__container .fullview {
-  max-width: 800px;
-  max-height: 80vh;
-  padding-top: 60px;
+  width: 90%;
+  max-width: 550px;
+  min-width: 300px;
+  padding: 60px 0 30px;
+  aspect-ratio: initial;
 }
 .fullscreen-view__container .fullview .pokemon-name {
   text-transform: uppercase;
   max-width: 300px;
+  margin: 0 auto;
 }
 .fullscreen-view__container .fullview figure {
   width: 300px;
@@ -664,6 +650,11 @@ main .pokedex__container {
   font-size: 2rem;
   text-align: left;
   padding: 20px 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+.fullscreen-view__container .fullview::-webkit-scrollbar {
+  width: 0px;
 }
 .fullscreen-view__container .favorite-button {
   position: absolute;
@@ -679,6 +670,49 @@ main .pokedex__container {
 }
 .fullscreen-view__container .favorite-button:hover {
   cursor: pointer;
+}
+.fullscreen-view__container .evolution-container {
+  width: fit-content;
+  max-width: 95%;
+  min-height: 230px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  padding-left: 10px;
+  margin: 0 auto;
+  overflow-x: scroll;
+  font-family: "VT323";
+}
+.fullscreen-view__container .evolution-container .evolution {
+  width: 130px;
+  height: fit-content;
+  margin-right: 10px;
+}
+.fullscreen-view__container .evolution-container .evolution figure {
+  width: 100%;
+  height: 130px;
+  transition: all 0.3s;
+}
+.fullscreen-view__container .evolution-container .evolution h4 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+.fullscreen-view__container .evolution-container .evolution span {
+  display: block;
+  width: 80px;
+  line-height: 20px;
+  height: 20px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.fullscreen-view__container .evolution-container .evolution:hover {
+  cursor: pointer;
+}
+.fullscreen-view__container .evolution-container .evolution:hover figure {
+  transform: scale(1.15);
 }
 .fullscreen-view__container .close-button {
   position: absolute;
@@ -727,6 +761,40 @@ main .pokedex__container {
   cursor: pointer;
 }
 
+footer {
+  margin: 250px 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+  color: white;
+  text-transform: uppercase;
+}
+footer div {
+  display: flex;
+  align-items: center;
+  box-shadow: 5px 0 #383838, -5px 0 #383838, 0 -5px #383838, 0 5px #383838, 10px 0 black, -10px 0 black, 0 -10px black, 0 10px black, 0 0 0 5px black;
+  margin: 10px auto;
+  margin: 20px 40px;
+  padding: 10px 20px;
+  background-color: rgb(81, 81, 81);
+}
+footer img {
+  height: 30px;
+  margin-right: 10px;
+}
+footer .email img {
+  height: 23px;
+}
+footer span,
+footer a {
+  display: inline-block;
+  line-height: 30px;
+  color: inherit;
+}
+
 .toastify {
   text-transform: uppercase;
   text-align: center;
@@ -755,6 +823,49 @@ main .pokedex__container {
   margin: 10px auto;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #949494;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(224, 224, 224);
+  border-radius: 5px;
+}
+
+.cards-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #6890f0;
+  border: 2px solid black;
+}
+
+.cards-container::-webkit-scrollbar-thumb:active {
+  background: #e93031;
+}
+
+.evolution-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.evolution-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.evolution-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
 @media (max-width: 500px) {
   header .hero .title h1 {
     margin-bottom: 20px;
@@ -773,6 +884,32 @@ main .pokedex__container {
     max-width: 100%;
     margin-bottom: 150px;
   }
+  .fullscreen-view__container .fullview {
+    width: 100vw;
+    height: 100%;
+    max-width: none;
+    padding-top: 100px;
+    overflow-y: scroll;
+  }
+  .fullscreen-view__container .fullview .close-button {
+    position: fixed;
+    right: 30px;
+    top: 10px;
+  }
+  .fullscreen-view__container .fullview .favorite-button {
+    top: 20px;
+  }
+  .fullscreen-view__container .fullview .pokemon-id {
+    top: 35px;
+    left: 5%;
+  }
+  footer {
+    font-family: "VT323";
+    font-size: 1.5rem;
+  }
+  footer div {
+    margin: 20px 0;
+  }
 }
 @media (max-width: 400px) {
   main {
@@ -784,6 +921,27 @@ main .pokedex__container {
   .type-list__container h2 {
     width: 120%;
     left: -26px;
+  }
+}
+@media screen and (max-height: 800px) {
+  .fullscreen-view__container .fullview {
+    width: 100vw;
+    height: 100%;
+    max-width: none;
+    padding-top: 100px;
+    overflow-y: scroll;
+  }
+  .fullscreen-view__container .fullview .close-button {
+    position: fixed;
+    right: 30px;
+    top: 10px;
+  }
+  .fullscreen-view__container .fullview .pokemon-id {
+    top: 35px;
+    left: 5%;
+  }
+  .fullscreen-view__container .fullview .favorite-button {
+    top: 20px;
   }
 }
 

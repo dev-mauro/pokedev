@@ -37,7 +37,6 @@ body {
   background-image: url("https://user-images.githubusercontent.com/68218563/197870429-6c70718f-54dc-4712-94a1-5dcad026ca55.png");
   background-color: $grassgreen;
   background-size: contain;
-  padding-bottom: 100px;
   position: relative;
   scroll-behavior: smooth;
 }
@@ -426,33 +425,15 @@ main {
     position: absolute;
     top: -2.1em;
     padding: 5px 0;
-    color: black;
+    text-shadow: 0 3px black;
+    color: $black;
 
     span {
       display: inline-block;
       padding-left: 5px;
       color: red;
-      // text-shadow: 0 3px $pikayellow;
     }
   }
-}
-
-//CARD CONTAINER SCROLL STYLES ------------------------
-.cards-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.cards-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.cards-container::-webkit-scrollbar-thumb {
-  background: #6890f0;
-  border: 2px solid black;
-}
-
-.cards-container::-webkit-scrollbar-thumb:active {
-  background: #e93031;
 }
 
 //FULLSCREEN VIEW STYLE------------
@@ -468,13 +449,16 @@ main {
   align-items: center;
 
   .fullview {
-    max-width: 800px;
-    max-height: 80vh;
-    padding-top: 60px;
+    width: 90%;
+    max-width: 550px;
+    min-width: 300px;
+    padding: 60px 0 30px;
+    aspect-ratio: initial;
 
     .pokemon-name {
       text-transform: uppercase;
       max-width: 300px;
+      margin: 0 auto;
     }
 
     figure {
@@ -499,7 +483,13 @@ main {
       font-size: 2rem;
       text-align: left;
       padding: 20px 10px;
+      text-align: center;
+      margin: 0 auto;
     }
+  }
+
+  .fullview::-webkit-scrollbar {
+    width: 0px;
   }
 
   .favorite-button {
@@ -520,6 +510,55 @@ main {
     cursor: pointer;
   }
 
+  .evolution-container {
+    width: fit-content;
+    max-width: 95%;
+    min-height: 230px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    padding-left: 10px;
+    margin: 0 auto;
+    overflow-x: scroll;
+    font-family: $pixeled2;
+
+    .evolution {
+      width: 130px;
+      height: fit-content;
+      margin-right: 10px;
+
+      figure {
+        width: 100%;
+        height: 130px;
+        transition: all 0.3s;
+      }
+
+      h4 {
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        max-width: 100%;
+        margin-bottom: 5px;
+      }
+
+      span {
+        display: block;
+        width: 80px;
+        line-height: 20px;
+        height: 20px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .evolution:hover {
+      cursor: pointer;
+
+      figure {
+        transform: scale(1.15);
+      }
+    }
+  }
   .close-button {
     position: absolute;
     top: -25px;
@@ -564,6 +603,43 @@ main {
 
 .focus-searcher__helper:hover {
   cursor: pointer;
+}
+
+footer {
+  margin: 250px 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+  color: white;
+  text-transform: uppercase;
+
+  div {
+    display: flex;
+    align-items: center;
+    @include b.px2(5px, black, darken($black, 10%));
+    margin: 20px 40px;
+    padding: 10px 20px;
+    background-color: $black;
+  }
+
+  img {
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .email img {
+    height: 23px;
+  }
+
+  span,
+  a {
+    display: inline-block;
+    line-height: 30px;
+    color: inherit;
+  }
 }
 
 // TOASTIFY STYLES--------------
@@ -616,6 +692,52 @@ main {
   @include b.px2(5px, #7b4a00, #f9e108);
 }
 
+//BODY SCROLL STYLES
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: darken($card-background, 30%);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $card-background;
+  border-radius: 5px;
+}
+
+//CARD CONTAINER SCROLL STYLES ------------------------
+.cards-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #6890f0;
+  border: 2px solid black;
+}
+
+.cards-container::-webkit-scrollbar-thumb:active {
+  background: #e93031;
+}
+
+//FULLVIEW SCROLL STYLES
+.evolution-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.evolution-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.evolution-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
 //MEDIAQUERIES----------------
 @media (max-width: 500px) {
   header {
@@ -648,6 +770,40 @@ main {
     max-width: 100%;
     margin-bottom: 150px;
   }
+
+  .fullscreen-view__container {
+    .fullview {
+      width: 100vw;
+      height: 100%;
+      max-width: none;
+      padding-top: 100px;
+      overflow-y: scroll;
+
+      .close-button {
+        position: fixed;
+        right: 30px;
+        top: 10px;
+      }
+
+      .favorite-button {
+        top: 20px;
+      }
+
+      .pokemon-id {
+        top: 35px;
+        left: calc(50% - 45%);
+      }
+    }
+  }
+
+  footer {
+    font-family: $pixeled2;
+    font-size: 1.5rem;
+
+    div {
+      margin: 20px 0;
+    }
+  }
 }
 
 @media (max-width: 400px) {
@@ -662,6 +818,33 @@ main {
     h2 {
       width: 120%;
       left: -26px;
+    }
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .fullscreen-view__container {
+    .fullview {
+      width: 100vw;
+      height: 100%;
+      max-width: none;
+      padding-top: 100px;
+      overflow-y: scroll;
+
+      .close-button {
+        position: fixed;
+        right: 30px;
+        top: 10px;
+      }
+
+      .pokemon-id {
+        top: 35px;
+        left: calc(50% - 45%);
+      }
+
+      .favorite-button {
+        top: 20px;
+      }
     }
   }
 }

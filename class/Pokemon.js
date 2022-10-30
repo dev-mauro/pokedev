@@ -13,8 +13,6 @@ class Pokemon {
       "https://user-images.githubusercontent.com/68218563/197868839-9f80d72b-f65c-47af-8604-d4d2bfaba65b.png";
 
     this.frontSprite = info.sprites.front_default || unknownSprite;
-
-    this.favorite = favoritePokemon.isFavorite(this);
   }
 
   //retorna un array con los nombres de los tipos
@@ -44,11 +42,10 @@ class Pokemon {
     return nameParts.join(" ");
   }
 
-  toggleFavorite() {
-    this.favorite = !this.favorite;
+  isFavorite() {
+    const favoritePokemon = new FavoritesPokemon();
+    return favoritePokemon.isFavorite(this);
   }
 }
-
-const favoritePokemon = new FavoritesPokemon();
 
 export default Pokemon;

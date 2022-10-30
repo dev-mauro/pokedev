@@ -6,7 +6,7 @@ class PokeApi {
   //Recibe una url para hacer una petición, retorna un objeto
   async getData(url) {
     try {
-      const response = await fetch(this.pokeURL + url);
+      const response = await fetch(url);
       const data = response.ok && (await response.json());
 
       return data;
@@ -17,7 +17,7 @@ class PokeApi {
 
   //Recibe el nombre de un pokemon, retorna un objeto.
   async getPokemon(pokemonName) {
-    const url = "pokemon/" + pokemonName;
+    const url = this.pokeURL + "pokemon/" + pokemonName;
 
     const pokemon = await this.getData(url);
 
@@ -26,7 +26,7 @@ class PokeApi {
 
   //Recibe el nombre de un tipo, retorna un array con los pokemon del tipo escogido
   async getType(typeName) {
-    const url = "type/" + typeName;
+    const url = this.pokeURL + "type/" + typeName;
     const pokemonList = await this.getData(url);
 
     return pokemonList;
@@ -34,17 +34,18 @@ class PokeApi {
 
   //Recibe el id de un pokemon, retorna la informacion de specie
   async getPokemonSpecies(id) {
-    const request = `${pokeApi}pokemon-species/${id}/`;
-    const data = await getData(request);
+    const request = `${this.pokeURL}pokemon-species/${id}/`;
+    const data = await this.getData(request);
     return data;
   }
 
   //Retorna informacion de la cadena de evolucion de un pokemon
   async requestEvolutionChain(id) {
     const pokemonSpecie = await this.getPokemonSpecies(id);
+    if (!pokemonSpecie) return false;
     const request = pokemonSpecie.evolution_chain.url;
 
-    const data = await getData(request);
+    const data = await this.getData(request);
 
     return data;
   }
@@ -52,9 +53,10 @@ class PokeApi {
   //retorna un array de los id de la cadena de evolucion de un pokemon
   async getEvolutionChain({ id }) {
     const evolutionChain = await this.requestEvolutionChain(id);
+    if (!evolutionChain) return false;
     const evolutionArray = getDataFromChain(evolutionChain);
 
-    console.log(evolutionArray);
+    return evolutionArray;
   }
 }
 
@@ -84,6 +86,7 @@ const getEvolutions = (chain) => {
     if (currentPokemonChain)
       evolutionArray = [...evolutionArray, ...currentPokemonChain];
   }
+
   return evolutionArray;
 };
 
