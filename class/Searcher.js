@@ -1,5 +1,5 @@
 import Card from "./Card.js";
-import PokeApi from "./PokeApi.js";
+import PokeApi from "./pokeApi.js";
 import Pokemon from "./Pokemon.js";
 import { showToast, showSearchToast } from "./Toast.js";
 

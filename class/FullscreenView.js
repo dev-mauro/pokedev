@@ -118,7 +118,7 @@ class FullscreenView {
 
     for (let name of nameArray) {
       const pokemon = await pokeapi.getPokemon(name);
-      pokemonArray.push(pokemon);
+      if (pokemon) pokemonArray.push(pokemon);
     }
 
     return pokemonArray;
@@ -131,7 +131,7 @@ class FullscreenView {
     pokemonChain.then((response) => {
       this.evolutionContainer = document.querySelector(".evolution-container");
 
-      if (!response) {
+      if (!response || response.length == 0) {
         this.addEvolution(this.pokemon, this.evolutionContainer);
         return;
       }
